@@ -146,7 +146,6 @@ class OpenLineageSparkListenerTest {
   @Test
   void testSparkSQLEndGetsQueryExecutionFromEvent() {
     LogicalPlan query = UnresolvedRelation$.MODULE$.apply(TableIdentifier.apply("tableName"));
-
     when(sparkSession.sparkContext()).thenReturn(sparkContext);
     when(sparkContext.appName()).thenReturn("appName");
     when(sparkContext.getConf()).thenReturn(new SparkConf());
